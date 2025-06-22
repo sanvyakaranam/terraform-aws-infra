@@ -1,5 +1,5 @@
 module "vpc" {
-    source = "../modules/vpc"
+    source = "../../modules/vpc"
     vpc_cidr = var.vpc_cidr
     app_subnet_cidr = var.app_subnet_cidr
     db_subnet_cidr = var.app.db_subnet_cidr
@@ -9,12 +9,12 @@ module "vpc" {
 }
 
 module "keypair" {
-    source = "../modules/keypair"
+    source = "../../modules/keypair"
     env = "dev"
 }
 
 module "ec2" {
-    source = "../modules/ec2"
+    source = "../../modules/ec2"
     ami_id = var.ami_id
     instance_type = var.instance_type
     subnet_id = module.vpc.app_subnet_id
@@ -23,6 +23,5 @@ module "ec2" {
 }
 
 module "s3" {
-  source = "../modules/s3"
-  env = "dev"
+  source = "../../modules/s3"
 }
