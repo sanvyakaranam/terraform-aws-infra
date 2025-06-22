@@ -13,3 +13,11 @@ resource "aws_subnet" "app" {
     tags = {Name = "${var.env}-app-subnet"}
   
 }
+
+resource "aws_subnet" "db" {
+    vpc_id =  aws_vpc.vpc_poc_01.id
+    cidr_block = var.db_subnet_cidr
+    availability_zone = var.az2
+    tags = {Name = "${var.env}-db-subnet"}
+  
+}
