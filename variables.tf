@@ -11,3 +11,4 @@ variable "aws_secret_key" {
   description = "AWS Secret Key"
   sensitive   = true
 }
+

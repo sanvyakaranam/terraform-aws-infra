@@ -2,7 +2,7 @@ module "vpc" {
     source = "../../modules/vpc"
     vpc_cidr = var.vpc_cidr
     app_subnet_cidr = var.app_subnet_cidr
-    db_subnet_cidr = var.app.db_subnet_cidr
+    db_subnet_cidr = var.db_subnet_cidr
     az1 = var.az1
     az2 = var.az2
     env = "dev"
@@ -24,4 +24,5 @@ module "ec2" {
 
 module "s3" {
   source = "../../modules/s3"
+  env = "dev"
 }

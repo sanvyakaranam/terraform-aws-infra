@@ -1,5 +1,31 @@
+# Terraform state files
 *.tfstate
 *.tfstate.*
+
+# # Local execution artifacts (e.g., key pairs, SSH keys)
 *.pem
+*.key
+*.crt
+
+# Terraform configuration directories
 .terraform/
-terraform.tfvars
+.terraform.lock.hcl
+*.tfstate.backup
+
+# Crash logs
+crash.log
+
+# Sensitive variable override files
+*.tfvars
+*.tfvars.json
+
+# IDE settings
+.vscode/
+.idea/
+*.swp
+
+# MacOS system files
+.DS_Store
+
+# Shell history files
+*.history
